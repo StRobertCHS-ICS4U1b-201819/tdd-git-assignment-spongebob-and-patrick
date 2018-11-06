@@ -1,9 +1,12 @@
 
 # Just Pass Procedure Part 2
 def average(meanList):
-    if (len(meanList) == 1):
-        return 1
-    else:
-        return 2
+    sum = 0
+    for i in range(len(meanList)):
+        sum += meanList[i]
 
+    avg = sum / (len(meanList))
 
+    avg = round(avg,2)
+
+    return avg
