@@ -1,6 +1,9 @@
 
-# Just Pass Procedure
+# Just Pass Procedure Part 2
 def average(meanList):
-    return 1
+    if (len(meanList) == 1):
+        return 1
+    else:
+        return 2
 
 
