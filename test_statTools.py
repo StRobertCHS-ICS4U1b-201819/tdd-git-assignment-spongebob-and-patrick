@@ -22,6 +22,13 @@ def test_average_illegalCaseTwo ():
         average("Hello")
     assert ("Invalid Data Type Provided" == str(datamsg.value))
 
+# Illegal Case #2: Invalid items in a string
+def test_average_illegalCaseThree ():
+    with pytest.raises(TypeError) as datamsg:
+        average(["Hello", "World"])
+    assert ("Invalid Data Type Provided" == str(datamsg.value))
+
+
 
 
 
