@@ -12,7 +12,9 @@ def test_average_basicTest2 ():
 
 # Illegal Case #1: Empty List
 def test_average_illegalCase ():
-    assert(average([]) == "Must be items in the string")
+    with pytest.raises(ValueError) as errmsg:
+        average([])
+    assert("No Data Provided" == str(errmsg.value))
 
 
 
