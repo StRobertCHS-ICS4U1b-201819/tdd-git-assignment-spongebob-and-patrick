@@ -16,5 +16,12 @@ def test_average_illegalCase ():
         average([])
     assert("No Data Provided" == str(errmsg.value))
 
+# Illegal Case #2: Incorrect Data Type
+def test_average_illegalCaseTwo ():
+    with pytest.raises(TypeError) as datamsg:
+        average("Hello")
+    assert ("Invalid Data Type Provided" == str(datamsg.value))
+
+
 
 
