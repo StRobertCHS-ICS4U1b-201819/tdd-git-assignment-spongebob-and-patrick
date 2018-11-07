@@ -5,16 +5,22 @@ def average(meanList):
         # Raises error if no data in the string
         raise ValueError("No Data Provided")
 
+
     else:
-        sum = 0.0
-        for i in range(len(meanList)):
-            sum += meanList[i]
+        try:
+            sum = 0.0
+            for i in range(len(meanList)):
+                sum += meanList[i]
 
 
-        avg = sum / len(meanList)
-        avg = round(avg,2)
+            avg = sum / len(meanList)
+            avg = round(avg,2)
 
-        return avg
+            return avg
+
+        except:
+            raise TypeError("Invalid Data Type Provided")
+
 
 
 
