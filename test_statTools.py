@@ -44,11 +44,15 @@ def test_standarDeviation_BasicTestOne ():
 def test_standardDeviation_BasicTestTwo ():
     assert (standardDeviation([4, 5, 6, 5, 3]) == 1.02)
 
-# Exhaustive Test Casing with Different Applicable Data Types
+# Exhaustive Testing
 def test_standardDeviation_Exhaustive ():
     assert (standardDeviation([4.0, 5, 6.0, 5, 3, 2, 8.0, 0, 4, 6, 7, 8, 4.0, 5, 7, 9, 8, 6, 7, 5, 5.0, 4, 2, 1, 9, 3, 3, 4, 6, 4
+ ]) == 2.25)
 
-]) == 2.25)
+# Exhaustive Test Casing with Different Applicable Data Types
+def test_standardDeviation_ExhaustiveTwo ():
+    assert (standardDeviation([4.0, -5, 6.0, 5, 3, 27.45, 8.0, 0, 4, 6, -7.65, 8, 4.0, 5, 7,
+    -9.0, 8, 6, 7, 5, 5.0, -4.5, -2, 1, 9, -3.9, 3, 4, 6, 4]) == 6.44)
 
 
 
