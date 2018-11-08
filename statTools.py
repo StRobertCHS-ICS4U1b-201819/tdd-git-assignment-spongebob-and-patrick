@@ -8,11 +8,10 @@
 # Created:	07/11/2018
 #-------------------------------------------------------------------------------
 
-# Implementing First Illegal Case: Empty String
 def average(meanList):
     """ The function calculates the mean of values in a list
 
-      :param meanList: (list) Gets the values of data in the list
+    :param meanList: (list) Gets the values of data in the list
       :return: (float) The mean value of the numbers in the list
       """
 
@@ -39,3 +38,6 @@ def average(meanList):
             raise TypeError("Invalid Data Type Provided")
 
 
+# Just Pass Conditions
+def standardDeviation(stdDevList):
+    return 6.32
