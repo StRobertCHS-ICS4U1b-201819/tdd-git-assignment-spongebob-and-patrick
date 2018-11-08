@@ -68,22 +68,17 @@ def standardDeviation(stdDevList):
     else:
         try:
 
-            sum = 0.0
+            avg = average(stdDevList)
+
             variance = 0.0
 
-            # Find Mean
-            for m in range(len(stdDevList)):
-                sum += stdDevList[m]
-
-            avg = sum / len(stdDevList)
-
-             # Find variance
+            # Find variance
             for x in range(len(stdDevList)):
                 variance += math.pow((stdDevList[x] - avg), 2)
 
             # Find standard deviation and round to 2 decimal places
             stdDev = math.sqrt((variance/len(stdDevList)))
-            stdDev = round(stdDev,2)
+            stdDev = round(stdDev, 2)
 
             return stdDev
 
@@ -92,8 +87,58 @@ def standardDeviation(stdDevList):
             raise TypeError("Invalid List Provided")
 
 def mode (modeList):
-    if len(modeList) == 4:
-        return 3.0
+
+    frequency = 1
+    doubleOccurances = [0]
+    lrgFreq = 0
+    mode = 0.0
+    length = (len(modeList) - 1)
+
+    modeList.sort()
+
+    for i in range(length):
+        if modeList[i] == modeList[i + 1]:
+            frequency += 1
+
+        elif modeList[i] != modeList[i + 1]:
+            if frequency > lrgFreq:
+                doubleOccurances = [0]
+                lrgFreq = frequency
+                doubleOccurances[0] = lrgFreq
+                mode = modeList[i]
+                frequency = 1
+
+            elif frequency == lrgFreq:
+                doubleOccurances.append(lrgFreq)
+                frequency = 1
+
+        if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
+            if frequency > lrgFreq:
+                doubleOccurances = [0]
+                lrgFreq = frequency
+                doubleOccurances[0] = lrgFreq
+                mode = modeList[i]
+
+            elif frequency == lrgFreq:
+                doubleOccurances.append(lrgFreq)
+
+
+    mode = float(mode)
+
+    if len(doubleOccurances) > 1:
+        raise ValueError("Error: More than 1 Mode")
 
     else:
-        return -2.0
+        return mode
+
+
+
+
+
+
+
+
+
+
+
+

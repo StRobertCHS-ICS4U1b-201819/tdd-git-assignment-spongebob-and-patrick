@@ -70,12 +70,18 @@ def test_standardDeviation_IllegalCaseTwo ():
 def test_standardDeviation_CornerCase ():
     assert (standardDeviation([-3.4]) == 0.0)
 
-# Basic Test Code
+# Basic Test Code For Mode
 def test_mode_BasicTestOne ():
     assert (mode([3,3,5,3]) == 3.0)
 
+# Basic Test Code For Mode
 def test_mode_BasicTestTwo ():
     assert (mode([-2,3,-2,5,-2]) == -2.0)
+
+# Exhaustive Testing with Decimal and Whole Numbers
+def test_mode_ExhaustiveTesting ():
+    assert (mode([-2,1.0,3.0,-2.0, 3.0, 5.4, -1, -2]) == -2.0)
+    
 
 
 
