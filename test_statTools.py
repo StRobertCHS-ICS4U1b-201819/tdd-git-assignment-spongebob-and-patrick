@@ -54,6 +54,11 @@ def test_standardDeviation_ExhaustiveTwo ():
     assert (standardDeviation([4.0, -5, 6.0, 5, 3, 27.45, 8.0, 0, 4, 6, -7.65, 8, 4.0, 5, 7,
     -9.0, 8, 6, 7, 5, 5.0, -4.5, -2, 1, 9, -3.9, 3, 4, 6, 4]) == 6.44)
 
+def test_standardDeviation_IllegalCaseOne ():
+    with pytest.raises(ValueError) as valuemsg:
+        standardDeviation([])
+    assert ("No Data Provided" == str(valuemsg))
+
 
 
 
