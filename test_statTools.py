@@ -34,7 +34,7 @@ def test_average_exhaustiveCase ():
 
 # Test Corner Case
 def test_average_cornerCase ():
-    assert(average([0]) == 0.0)
+    assert(average([3.4]) == 3.4)
 
 # Basic Test Standard Deviation: Just Pass Procedure
 def test_standarDeviation_BasicTestOne ():
@@ -65,6 +65,11 @@ def test_standardDeviation_IllegalCaseTwo ():
     with pytest.raises(TypeError) as datamsg:
         standardDeviation(["Purple", "Reign"])
     assert ("Invalid Data Type Provided" == str(datamsg.value))
+
+# Corner Case: Only 1 value
+def test_standardDeviation_CornerCase ():
+    assert (standardDeviation([-3.4]) == 0.0)
+
 
 
 
