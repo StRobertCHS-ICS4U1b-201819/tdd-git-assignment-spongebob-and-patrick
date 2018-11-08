@@ -39,7 +39,7 @@ def average(meanList):
 
         # Else, error inputted
         except:
-            raise TypeError("Invalid Data Type Provided")
+            raise TypeError("Invalid List Provided")
 
 
 
@@ -89,4 +89,4 @@ def standardDeviation(stdDevList):
 
         # Else, error inputted in the list
         except:
-            raise TypeError("Invalid Data Type Provided")
+            raise TypeError("Invalid List Provided")

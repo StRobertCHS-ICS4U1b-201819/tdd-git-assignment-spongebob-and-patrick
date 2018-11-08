@@ -20,13 +20,13 @@ def test_average_illegalCase ():
 def test_average_illegalCaseTwo ():
     with pytest.raises(TypeError) as datamsg:
         average("Hello")
-    assert ("Invalid Data Type Provided" == str(datamsg.value))
+    assert ("Invalid List Provided" == str(datamsg.value))
 
 # Illegal Case #2: Invalid items in a string
 def test_average_illegalCaseThree ():
     with pytest.raises(TypeError) as datamsg:
         average(["Hello", 0.0])
-    assert ("Invalid Data Type Provided" == str(datamsg.value))
+    assert ("Invalid List Provided" == str(datamsg.value))
 
 # Exhaustive Test Case
 def test_average_exhaustiveCase ():
@@ -64,7 +64,7 @@ def test_standardDeviation_IllegalCaseOne ():
 def test_standardDeviation_IllegalCaseTwo ():
     with pytest.raises(TypeError) as datamsg:
         standardDeviation(["Purple", "Reign"])
-    assert ("Invalid Data Type Provided" == str(datamsg.value))
+    assert ("Invalid List Provided" == str(datamsg.value))
 
 # Corner Case: Only 1 value
 def test_standardDeviation_CornerCase ():
