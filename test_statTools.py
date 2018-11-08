@@ -40,6 +40,10 @@ def test_average_cornerCase ():
 def test_standarDeviation_BasicTestOne ():
     assert(standardDeviation([60,56,61,68,51,53,69,54]) == 6.32)
 
+# Basic Test Standard Deviation: Just Pass Procedure
+def test_standardDeviation_BasicTestTwo ():
+    assert (standardDeviation([4, 5, 6, 5, 3]) == 1.13)
+
 
 
 
