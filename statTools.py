@@ -49,19 +49,25 @@ def standardDeviation(stdDevList):
         raise ValueError("No Data Provided")
 
     # Find mean
-    sum = 0.0
-    variance = 0.0
-    for m in range(len(stdDevList)):
-        sum += stdDevList[m]
 
-    avg = sum / len(stdDevList)
+    else:
+        try:
+            sum = 0.0
+            variance = 0.0
+            for m in range(len(stdDevList)):
+                sum += stdDevList[m]
 
-    # Find variance
-    for x in range(len(stdDevList)):
-        variance += math.pow((stdDevList[x] - avg), 2)
+            avg = sum / len(stdDevList)
 
-    # Find standard deviation and round to 2 decimal places
-    stdDev = math.sqrt((variance/len(stdDevList)))
-    stdDev = round(stdDev,2)
+             # Find variance
+            for x in range(len(stdDevList)):
+                variance += math.pow((stdDevList[x] - avg), 2)
 
-    return stdDev
+            # Find standard deviation and round to 2 decimal places
+            stdDev = math.sqrt((variance/len(stdDevList)))
+            stdDev = round(stdDev,2)
+
+            return stdDev
+
+        except:
+            raise TypeError("Invalid Data Type Provided")
