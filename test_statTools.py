@@ -74,7 +74,8 @@ def test_standardDeviation_CornerCase ():
 def test_mode_BasicTestOne ():
     assert (mode([3,3,5,3]) == 3.0)
 
-
+def test_mode_BasicTestTwo ():
+    assert (mode([-2,3,-2,5,-2]) == -2.0)
 
 
 
