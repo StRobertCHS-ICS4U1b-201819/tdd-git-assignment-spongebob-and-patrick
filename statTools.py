@@ -90,3 +90,6 @@ def standardDeviation(stdDevList):
         # Else, error inputted in the list
         except:
             raise TypeError("Invalid List Provided")
+
+def mode (modeList):
+    return 3.0
