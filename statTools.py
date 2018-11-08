@@ -42,18 +42,36 @@ def average(meanList):
             raise TypeError("Invalid Data Type Provided")
 
 
-# Basic Working Requirements
-def standardDeviation(stdDevList):
 
+#-------------------------------------------------------------------------------
+# Name:	standardDeviation
+# Purpose:
+# Returning Calculates the Standard Deviation (spread) of values in a list
+#
+# Author:	Nimal.S
+#
+# Created:	07/11/2018
+#-------------------------------------------------------------------------------
+
+def standardDeviation(stdDevList):
+    """ The function calculates the mean of values in a list
+
+        :param stdDevList: (list) Gets the values of data in the list
+        :return: (float) The standard deviation of the values
+
+    """
+
+    # Must be items in the list
     if len(stdDevList) < 1:
         raise ValueError("No Data Provided")
 
-    # Find mean
-
     else:
         try:
+
             sum = 0.0
             variance = 0.0
+
+            # Find Mean
             for m in range(len(stdDevList)):
                 sum += stdDevList[m]
 
@@ -69,5 +87,6 @@ def standardDeviation(stdDevList):
 
             return stdDev
 
+        # Else, error inputted in the list
         except:
             raise TypeError("Invalid Data Type Provided")
