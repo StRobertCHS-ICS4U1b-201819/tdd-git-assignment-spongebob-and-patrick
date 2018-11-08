@@ -8,16 +8,19 @@
 # Created:	07/11/2018
 #-------------------------------------------------------------------------------
 
-# Implementing First Illegal Case: Empty String
+import math
+
 def average(meanList):
     """ The function calculates the mean of values in a list
 
-      :param meanList: (list) Gets the values of data in the list
-      :return: (float) The mean value of the numbers in the list
-      """
+    :param meanList: (list) Gets the values of data in the list
+    :return: (float) The mean value of the numbers in the list
+
+    """
 
     # Must have items in the list
     if len(meanList) < 1:
+
         # Raises error if no data in the string
         raise ValueError("No Data Provided")
 
@@ -39,3 +42,51 @@ def average(meanList):
             raise TypeError("Invalid Data Type Provided")
 
 
+
+#-------------------------------------------------------------------------------
+# Name:	standardDeviation
+# Purpose:
+# Returning Calculates the Standard Deviation (spread) of values in a list
+#
+# Author:	Nimal.S
+#
+# Created:	07/11/2018
+#-------------------------------------------------------------------------------
+
+def standardDeviation(stdDevList):
+    """ The function calculates the mean of values in a list
+
+        :param stdDevList: (list) Gets the values of data in the list
+        :return: (float) The standard deviation of the values
+
+    """
+
+    # Must be items in the list
+    if len(stdDevList) < 1:
+        raise ValueError("No Data Provided")
+
+    else:
+        try:
+
+            sum = 0.0
+            variance = 0.0
+
+            # Find Mean
+            for m in range(len(stdDevList)):
+                sum += stdDevList[m]
+
+            avg = sum / len(stdDevList)
+
+             # Find variance
+            for x in range(len(stdDevList)):
+                variance += math.pow((stdDevList[x] - avg), 2)
+
+            # Find standard deviation and round to 2 decimal places
+            stdDev = math.sqrt((variance/len(stdDevList)))
+            stdDev = round(stdDev,2)
+
+            return stdDev
+
+        # Else, error inputted in the list
+        except:
+            raise TypeError("Invalid Data Type Provided")
