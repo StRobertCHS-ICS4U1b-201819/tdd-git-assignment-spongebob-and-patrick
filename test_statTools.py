@@ -42,7 +42,14 @@ def test_standarDeviation_BasicTestOne ():
 
 # Basic Test Standard Deviation: Just Pass Procedure
 def test_standardDeviation_BasicTestTwo ():
-    assert (standardDeviation([4, 5, 6, 5, 3]) == 1.13)
+    assert (standardDeviation([4, 5, 6, 5, 3]) == 1.02)
+
+# Exhaustive Test Casing with Different Applicable Data Types
+def test_standardDeviation_Exhaustive ():
+    assert (standardDeviation([4.0, 5, 6.0, 5, 3, 2, 8.0, 0, 4, 6, 7, 8, 4.0, 5, 7, 9, 8, 6, 7, 5, 5.0, 4, 2, 1, 9, 3, 3, 4, 6, 4
+
+]) == 2.25)
+
 
 
 

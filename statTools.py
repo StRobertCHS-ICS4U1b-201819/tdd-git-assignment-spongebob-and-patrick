@@ -8,6 +8,8 @@
 # Created:	07/11/2018
 #-------------------------------------------------------------------------------
 
+import math
+
 def average(meanList):
     """ The function calculates the mean of values in a list
 
@@ -38,10 +40,23 @@ def average(meanList):
             raise TypeError("Invalid Data Type Provided")
 
 
-# Just Pass Conditions
+# Basic Working Requirements
 def standardDeviation(stdDevList):
-    if len(stdDevList) == 8:
-        return 6.32
 
-    else:
-        return 1.13
+    # Find mean
+    sum = 0.0
+    variance = 0.0
+    for m in range(len(stdDevList)):
+        sum += stdDevList[m]
+
+    avg = sum / len(stdDevList)
+
+    # Find variance
+    for x in range(len(stdDevList)):
+        variance += math.pow((stdDevList[x] - avg), 2)
+
+    # Find standard deviation and round to 2 decimal places
+    stdDev = math.sqrt((variance/len(stdDevList)))
+    stdDev = round(stdDev,2)
+
+    return stdDev
