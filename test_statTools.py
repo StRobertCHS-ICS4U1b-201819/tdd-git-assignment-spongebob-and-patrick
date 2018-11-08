@@ -70,9 +70,13 @@ def test_standardDeviation_IllegalCaseTwo ():
 def test_standardDeviation_CornerCase ():
     assert (standardDeviation([-3.4]) == 0.0)
 
-# Basic Test Case For Mode
+# Basic Test Case
 def test_mode_BasicTestOne ():
-    assert (mode([3,3,5,3]) == 3.0)
+    assert (mode([3, 3, 5, 3]) == 3.0)
+
+# Basic Test Case Part 2
+def test_mode_BasicTestTwo ():
+    assert (mode([-2, 1, -3, -2, -2]) == -2.0)
 
 
 

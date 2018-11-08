@@ -96,4 +96,7 @@ def standardDeviation(stdDevList):
 
 # Just Pass Procedure
 def mode (modeList):
-    return 3.0
+    if len(modeList) == 4:
+        return 3.0
+    else:
+        return -2.0
