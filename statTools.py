@@ -39,7 +39,7 @@ def average(meanList):
 
         # Else, error inputted
         except:
-            raise TypeError("Invalid Data Type Provided")
+            raise TypeError("Invalid List Provided")
 
 
 
@@ -53,6 +53,8 @@ def average(meanList):
 # Created:	07/11/2018
 #-------------------------------------------------------------------------------
 
+
+
 def standardDeviation(stdDevList):
     """ The function calculates the mean of values in a list
 
@@ -60,6 +62,7 @@ def standardDeviation(stdDevList):
         :return: (float) The standard deviation of the values
 
     """
+
 
     # Must be items in the list
     if len(stdDevList) < 1:
@@ -89,4 +92,5 @@ def standardDeviation(stdDevList):
 
         # Else, error inputted in the list
         except:
-            raise TypeError("Invalid Data Type Provided")
+
+            raise TypeError("Invalid List Provided")
