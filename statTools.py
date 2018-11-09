@@ -121,6 +121,11 @@ def mode (modeList):
             # Ask Mr.Fabroa, How to get it as Type Error
             modeList[0] / 1
 
+
+            # Guarantee Case. Only case where you need check last item.
+            if len(modeList) == 2 and modeList[0] != modeList[1]:
+                raise ValueError("Error: More than 1 Mode")
+
             for i in range(length):
 
                 # Check amount of times number occurs (sorted list)
@@ -161,10 +166,6 @@ def mode (modeList):
 
             # More than 1 mode
             if len(doubleOccurances) > 1:
-                raise ValueError("Error: More than 1 Mode")
-
-            # Guarantee Case. Only case where you need check last item.
-            elif len(modeList) == 2 and modeList[0] != modeList[1]:
                 raise ValueError("Error: More than 1 Mode")
 
             else:
