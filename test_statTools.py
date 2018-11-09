@@ -103,6 +103,7 @@ def test_mode_CornerCaseTwo():
     with pytest.raises(ValueError) as valErr:
         mode([0,1,2,3,4])
     assert ("Error: More than 1 Mode" == str(valErr.value))
+
     
 
 
