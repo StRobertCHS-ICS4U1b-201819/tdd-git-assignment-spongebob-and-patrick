@@ -178,13 +178,17 @@ def rangeFunction(rangeList):
     if len(rangeList) < 1:
         raise ValueError("No Data Provided")
 
-    theRange = 0.0
-    rangeList.sort()
-    print (rangeList)
+    try:
+        theRange = 0.0
+        rangeList.sort()
+        print (rangeList)
 
-    theRange = rangeList[len(rangeList) - 1] - rangeList[0]
+        theRange = rangeList[len(rangeList) - 1] - rangeList[0]
 
-    return round(theRange, 2)
+        return round(theRange, 2)
+
+    except TypeError:
+        raise TypeError("Invalid List Provided")
 
 
 

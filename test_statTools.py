@@ -136,6 +136,14 @@ def test_rangeFunction_UnusualCaseOne ():
     assert ("No Data Provided" == str(valerror.value))
 
 # Unusual Case: Invalid String
+    with pytest.raises(TypeError) as tyerror:
+        rangeFunction(["Purple", "Reign"])
+    assert("Invalid List Provided" == str(tyerror.value))
+
+# Corner Case: 1 Number
+def test_rangeFunction_CornerCase ():
+    assert(rangeFunction([3]) == 0.0)
+
 
 
 
