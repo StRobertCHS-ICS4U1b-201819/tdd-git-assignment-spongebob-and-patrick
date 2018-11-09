@@ -121,9 +121,6 @@ def mode (modeList):
             length = (len(modeList) - 1)
             modeList.sort()
 
-            # Ask Mr.Fabroa, How to get it as Type Error
-
-
             # Guarantee Case. Only case where you need check last item.
             if len(modeList) == 2 and modeList[0] != modeList[1]:
                 raise ValueError("Error: More than 1 Mode")
