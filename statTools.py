@@ -175,10 +175,12 @@ def mode (modeList):
 
 # Just Pass Procedure
 def rangeFunction(rangeList):
-    if len(rangeList) == 6:
-        return 9.0
-    else:
-        return 14.0
+    theRange = 0.0
+    rangeList.sort()
+
+    theRange = rangeList[len(rangeList) - 1] - rangeList[0]
+
+    return round(theRange,2)
 
 
 
