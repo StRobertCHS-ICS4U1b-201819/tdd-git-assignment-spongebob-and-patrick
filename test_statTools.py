@@ -119,7 +119,12 @@ def test_mode_illegalCaseTwo ():
 
 # Just Pass Procedure
 def test_rangeFunction_basicTestOne ():
-    assert (rangeFunction([1,4,2,8,10,9]) == 9.0 )
+    assert(rangeFunction([1,4,2,8,10,9]) == 9.0)
+
+def test_rangeFunction_basicTestTwo ():
+    assert(rangeFunction([2,6,1,-2.0,-5,-8.0, 3]) == 14.0)
+
+
 
 
 
