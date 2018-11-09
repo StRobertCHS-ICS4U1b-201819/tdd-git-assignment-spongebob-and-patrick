@@ -33,7 +33,7 @@ def average(meanList):
 
             # Find average
             avg = sum / len(meanList)
-            avg = round(avg,2)
+            avg = round(avg, 2)
 
             return avg
 
@@ -104,10 +104,10 @@ def standardDeviation(stdDevList):
 def verifyList (theList):
     """ The function make sure that the list has the correct data type
 
-        :param theList: (list) Gets the values of data in the list
-        :return: (bool) Returns true or false
+    :param theList: (list) Gets the values of data in the list
+    :return: (bool) Returns true or false
 
-        """
+    """
 
     # If incorrect data type, return false
     for i in range(len(theList)):
@@ -124,7 +124,7 @@ def verifyList (theList):
 #
 # Author:	Nimal.S
 #
-# Created:	08/11/2018
+# Created:	09/11/2018
 #-------------------------------------------------------------------------------
 
 
@@ -157,11 +157,10 @@ def mode(modeList):
         theMode = float(modeList[0])
         return float(theMode)
 
-    # Exce
+    # Exception Case: Only time need to check last value when not equa;
     elif len(modeList) == 2 and modeList[0] != modeList[1]:
             raise ValueError("Error: More than 1 Mode")
     else:
-
         for i in range(length):
             if modeList[i] == modeList[i + 1]:
                 frequency += 1
@@ -177,12 +176,13 @@ def mode(modeList):
                     theMode = modeList[i]
                     frequency = 1
 
-                # If same as greatest frequency, more than 1 mode
+                # If same as greatest frequency, counts more than 1 frequency
                 elif frequency == lrgFreq:
                     doubleOccurances.append(lrgFreq)
                     frequency = 1
 
-            # Exception case without going out of bonds
+            # Exception case: Only check last case if last two are equal
+
             if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
                 if frequency > lrgFreq:
                     doubleOccurances = [0]
@@ -201,9 +201,9 @@ def mode(modeList):
             return float(theMode)
 
 #-------------------------------------------------------------------------------
-# Name:	mode
+# Name:	range
 # Purpose:
-# Returning The Mode of a List
+# Returning The Range of a List
 #
 # Author:	Nimal.S
 #
