@@ -121,11 +121,22 @@ def test_mode_illegalCaseTwo ():
 def test_rangeFunction_basicTestOne ():
     assert(rangeFunction([1,4,2,8,10,9]) == 9.0)
 
+# Just Pass Procedure
 def test_rangeFunction_basicTestTwo ():
     assert(rangeFunction([2,6,1,-2.0,-5,-8.0, 3]) == 14.0)
 
+# Exhaustive Testing
 def test_rangeFunction_Exhaustive ():
     assert(rangeFunction([-3.4,5.4,1,0,9.54,-23.4,83,97.4,4.3,7]) == 120.8)
+
+# Unusual Case: Empty String
+def test_rangeFunction_UnusualCaseOne ():
+    with pytest.raises(ValueError) as valerror:
+        rangeFunction([])
+    assert ("No Data Provided" == str(valerror.value))
+
+# Unusual Case: Invalid String
+
 
 
 
