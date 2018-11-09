@@ -90,6 +90,33 @@ def standardDeviation(stdDevList):
             raise TypeError("Invalid List Provided")
 
 
+
+#-------------------------------------------------------------------------------
+# Name:	verifyList
+# Purpose:
+# Make sure that the list has the correct data type
+#
+# Author:	Nimal.S
+#
+# Created:	09/11/2018
+#-------------------------------------------------------------------------------
+
+def verifyList (theList):
+    """ The function make sure that the list has the correct data type
+
+        :param theList: (list) Gets the values of data in the list
+        :return: (bool) Returns true or false
+
+        """
+
+    # If incorrect data type, return false
+    for i in range(len(theList)):
+        if not (isinstance(theList[i], float)) and not (isinstance(theList[i], int)):
+            return False
+
+    return True
+
+
 #-------------------------------------------------------------------------------
 # Name:	mode
 # Purpose:
@@ -100,15 +127,8 @@ def standardDeviation(stdDevList):
 # Created:	08/11/2018
 #-------------------------------------------------------------------------------
 
-def verifyFunction (theList):
-    for i in range(len(theList)):
-        if not (isinstance(theList[i], float)) and not (isinstance(theList[i], int)):
-            return False
 
-    return True
-
-
-def mode (modeList):
+def mode(modeList):
     """ The function finds the mode of a set of values
 
     :param modeList: (list) Gets the values of data in the list
@@ -124,9 +144,8 @@ def mode (modeList):
     modeList.sort()
     theMode = 0.0
 
-    print (verifyFunction(modeList))
-    if verifyFunction(modeList) == False:
-        print (verifyFunction(modeList))
+    # Check if list has correct data type
+    if verifyList(modeList) == False:
         raise TypeError("Invalid List Provided")
 
     # Handling Empty List
@@ -138,6 +157,7 @@ def mode (modeList):
         theMode = float(modeList[0])
         return float(theMode)
 
+    # Exce
     elif len(modeList) == 2 and modeList[0] != modeList[1]:
             raise ValueError("Error: More than 1 Mode")
     else:

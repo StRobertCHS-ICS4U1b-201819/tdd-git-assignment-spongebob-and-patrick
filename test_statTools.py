@@ -166,10 +166,12 @@ def test_mode_illegalCaseTwo ():
     assert("No Data Provided" == str(errmsg.value))
 
 
+# Unusual Test Case: More Illegal Cases
+
 
 def test_mode_CornerCaseThree ():
     with pytest.raises(TypeError) as typeError:
-        mode([0, "float"])
+        mode([0, 0, "float"])
     assert ("Invalid List Provided" == str(typeError.value))
 
 # Just Pass Procedure
