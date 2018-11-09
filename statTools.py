@@ -173,12 +173,30 @@ def mode (modeList):
     except TypeError:
         raise TypeError("Invalid List Provided")
 
-# Just Pass Procedure
+#-------------------------------------------------------------------------------
+# Name:	mode
+# Purpose:
+# Returning The Mode of a List
+#
+# Author:	Nimal.S
+#
+# Created:	08/11/2018
+#-------------------------------------------------------------------------------
+
 def rangeFunction(rangeList):
+    """ The function finds the range of a set of values
+
+    :param rangeList: (list) Gets the values of data in the list
+    :return: (float) The range of the list
+
+    """
+
+    # If empty list, raise exception
     if len(rangeList) < 1:
         raise ValueError("No Data Provided")
 
     try:
+        # Sort list, then subtract largest and smallest numbers
         theRange = 0.0
         rangeList.sort()
         print (rangeList)
@@ -187,6 +205,7 @@ def rangeFunction(rangeList):
 
         return round(theRange, 2)
 
+    # Else, Invalid Input
     except TypeError:
         raise TypeError("Invalid List Provided")
 
