@@ -87,16 +87,15 @@ def standardDeviation(stdDevList):
             raise TypeError("Invalid List Provided")
 
 def mode (modeList):
-
     frequency = 1
     doubleOccurances = [0]
     lrgFreq = 0
     mode = 0.0
     length = (len(modeList) - 1)
-
     modeList.sort()
 
     for i in range(length):
+
         if modeList[i] == modeList[i + 1]:
             frequency += 1
 
@@ -122,17 +121,16 @@ def mode (modeList):
             elif frequency == lrgFreq:
                 doubleOccurances.append(lrgFreq)
 
+    if len(modeList) == 1:
+        mode = modeList[0]
 
     mode = float(mode)
 
-    if len(doubleOccurances) > 1:
+    if len(doubleOccurances) > 1 or len(modeList) == 2:
         raise ValueError("Error: More than 1 Mode")
 
     else:
         return mode
-
-
-
 
 
 
