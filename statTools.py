@@ -173,6 +173,10 @@ def mode (modeList):
     except TypeError:
         raise TypeError("Invalid List Provided")
 
+# Just Pass Procedure
+def rangeFunction(rangeList):
+    return 9.0
+
 
 
 

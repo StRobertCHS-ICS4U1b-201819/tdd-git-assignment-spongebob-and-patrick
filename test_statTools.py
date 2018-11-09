@@ -75,7 +75,7 @@ def test_mode_BasicTestOne ():
 
 # Basic Test Code For Mode
 def test_mode_BasicTestTwo ():
-    assert (mode([-2, 3, -2, 5,-2]) == -2.0)
+    assert (mode([3,3,3,4,4,4,5,5,5,5]) == 5.0)
 
 # Exhaustive Testing with Decimal and Whole Numbers
 def test_mode_ExhaustiveTesting ():
@@ -117,7 +117,9 @@ def test_mode_illegalCaseTwo ():
         mode([])
     assert("No Data Provided" == str(errmsg.value))
 
-
+# Just Pass Procedure
+def test_rangeFunction_basicTestOne ():
+    assert (rangeFunction([1,4,2,8,10,9]) == 9.0 )
 
 
 
