@@ -86,12 +86,30 @@ def standardDeviation(stdDevList):
         except:
             raise TypeError("Invalid List Provided")
 
-def mode (modeList):
+#-------------------------------------------------------------------------------
+# Name:	mode
+# Purpose:
+# Returning The Mode of a List
+#
+# Author:	Nimal.S
+#
+# Created:	08/11/2018
+#-------------------------------------------------------------------------------
 
+def mode (modeList):
+    """ The function finds the mode of a set of values
+
+    :param modeList: (list) Gets the values of data in the list
+    :return: (float) The mode of the list
+
+    """
+
+    # Handling Empty List
     if len(modeList) < 1:
         raise ValueError("No Data Provided")
 
     try:
+        #Declare Variables
         frequency = 1
         doubleOccurances = [0]
         lrgFreq = 0
@@ -99,25 +117,32 @@ def mode (modeList):
         length = (len(modeList) - 1)
         modeList.sort()
 
+        # Ask Mr.Fabroa, How to get it as Type Error
         modeList[0] / 1
 
         for i in range(length):
 
+            # Check amount of times number occurs (sorted list)
             if modeList[i] == modeList[i + 1]:
                 frequency += 1
 
             else:
+                # If greater than largest frequency, it becomes mode
                 if frequency > lrgFreq:
+
+                    # Resets list so only largest frequency
                     doubleOccurances = [0]
                     lrgFreq = frequency
                     doubleOccurances[0] = lrgFreq
                     mode = modeList[i]
                     frequency = 1
 
+                # If same as greatest frequency, more than 1 mode
                 elif frequency == lrgFreq:
                     doubleOccurances.append(lrgFreq)
                     frequency = 1
 
+            # Exception case without going out of bonds
             if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
                 if frequency > lrgFreq:
                     doubleOccurances = [0]
@@ -128,16 +153,23 @@ def mode (modeList):
                 elif frequency == lrgFreq:
                     doubleOccurances.append(lrgFreq)
 
+        # Only value is mode
         if len(modeList) == 1:
             mode = modeList[0]
             return float(mode)
 
+        # More than 1 mode
         if len(doubleOccurances) > 1:
+            raise ValueError("Error: More than 1 Mode")
+
+        # Guarantee Case
+        elif len(modeList) == 2 and modeList[0] != modeList[1]:
             raise ValueError("Error: More than 1 Mode")
 
         else:
             return float(mode)
 
+    # Invalid Data Type
     except TypeError:
         raise TypeError("Invalid List Provided")
 

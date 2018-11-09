@@ -51,8 +51,7 @@ def test_standardDeviation_Exhaustive ():
 
 # Exhaustive Test Casing with Different Applicable Data Types
 def test_standardDeviation_ExhaustiveTwo ():
-    assert (standardDeviation([4.0, -5, 6.0, 5, 3, 27.45, 8.0, 0, 4, 6, -7.65, 8, 4.0, 5, 7,
-    -9.0, 8, 6, 7, 5, 5.0, -4.5, -2, 1, 9, -3.9, 3, 4, 6, 4]) == 6.44)
+    assert (standardDeviation([4.0, -5, 6.0, 5, 3, 27.45, 8.0, 0, 4, 6, -7.65, 8, 4.0, 5, 7, -9.0, 8, 6, 7, 5, 5.0, -4.5, -2, 1, 9, -3.9, 3, 4, 6, 4]) == 6.44)
 
 # Illegal Test Case: Empty String
 def test_standardDeviation_IllegalCaseOne ():
@@ -72,15 +71,15 @@ def test_standardDeviation_CornerCase ():
 
 # Basic Test Code For Mode
 def test_mode_BasicTestOne ():
-    assert (mode([3,3,5,3]) == 3.0)
+    assert (mode([3, 3, 5, 3]) == 3.0)
 
 # Basic Test Code For Mode
 def test_mode_BasicTestTwo ():
-    assert (mode([-2,3,-2,5,-2]) == -2.0)
+    assert (mode([-2, 3, -2, 5,-2]) == -2.0)
 
 # Exhaustive Testing with Decimal and Whole Numbers
 def test_mode_ExhaustiveTesting ():
-    assert (mode([-2,1.0,3.0,-2.0, 3.0, 5.4, -1, -2]) == -2.0)
+    assert (mode([-2, 1.0, 3.0, -2.0, 3.0, 5.4, -1, -2]) == -2.0)
 
 # Unusual Testing. More than 1 Mode
 def test_mode_UnusualCaseOne ():
@@ -91,7 +90,7 @@ def test_mode_UnusualCaseOne ():
 # Unusual Testing. More than 1 Mode
 def test_mode_UnusualCaseTwo ():
     with pytest.raises(ValueError) as valErr:
-        mode([0,1,2,3,4])
+        mode([0, 1, 2, 3, 4])
     assert ("Error: More than 1 Mode" == str(valErr.value))
 
 # Testing Out of Bonds For Loop
@@ -99,10 +98,12 @@ def test_mode_CornerCaseOne ():
     assert (mode([2]) == 2.0)
 
 # Handle Guarantee Case
+
 def test_mode_CornerCaseTwo():
     with pytest.raises(ValueError) as valErr:
-        mode([0,1,2,3,4])
+        mode([0, 4])
     assert ("Error: More than 1 Mode" == str(valErr.value))
+
 
 # Dealing with Illegal Input
 def test_mode_IllegalCaseOne ():
