@@ -87,50 +87,61 @@ def standardDeviation(stdDevList):
             raise TypeError("Invalid List Provided")
 
 def mode (modeList):
-    frequency = 1
-    doubleOccurances = [0]
-    lrgFreq = 0
-    mode = 0.0
-    length = (len(modeList) - 1)
-    modeList.sort()
 
-    for i in range(length):
+    if len(modeList) < 1:
+        raise ValueError("No Data Provided")
 
-        if modeList[i] == modeList[i + 1]:
-            frequency += 1
+    try:
+        frequency = 1
+        doubleOccurances = [0]
+        lrgFreq = 0
+        mode = 0.0
+        length = (len(modeList) - 1)
+        modeList.sort()
 
-        elif modeList[i] != modeList[i + 1]:
-            if frequency > lrgFreq:
-                doubleOccurances = [0]
-                lrgFreq = frequency
-                doubleOccurances[0] = lrgFreq
-                mode = modeList[i]
-                frequency = 1
+        modeList[0] / 1
 
-            elif frequency == lrgFreq:
-                doubleOccurances.append(lrgFreq)
-                frequency = 1
+        for i in range(length):
 
-        if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
-            if frequency > lrgFreq:
-                doubleOccurances = [0]
-                lrgFreq = frequency
-                doubleOccurances[0] = lrgFreq
-                mode = modeList[i]
+            if modeList[i] == modeList[i + 1]:
+                frequency += 1
 
-            elif frequency == lrgFreq:
-                doubleOccurances.append(lrgFreq)
+            else:
+                if frequency > lrgFreq:
+                    doubleOccurances = [0]
+                    lrgFreq = frequency
+                    doubleOccurances[0] = lrgFreq
+                    mode = modeList[i]
+                    frequency = 1
 
-    if len(modeList) == 1:
-        mode = modeList[0]
+                elif frequency == lrgFreq:
+                    doubleOccurances.append(lrgFreq)
+                    frequency = 1
 
-    mode = float(mode)
+            if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
+                if frequency > lrgFreq:
+                    doubleOccurances = [0]
+                    lrgFreq = frequency
+                    doubleOccurances[0] = lrgFreq
+                    mode = modeList[i]
 
-    if len(doubleOccurances) > 1 or len(modeList) == 2:
-        raise ValueError("Error: More than 1 Mode")
+                elif frequency == lrgFreq:
+                    doubleOccurances.append(lrgFreq)
 
-    else:
-        return mode
+        if len(modeList) == 1:
+            mode = modeList[0]
+            return float(mode)
+
+        if len(doubleOccurances) > 1:
+            raise ValueError("Error: More than 1 Mode")
+
+        else:
+            return float(mode)
+
+    except TypeError:
+        raise TypeError("Invalid List Provided")
+
+
 
 
 

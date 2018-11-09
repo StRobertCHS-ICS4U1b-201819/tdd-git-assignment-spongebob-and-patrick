@@ -104,6 +104,23 @@ def test_mode_CornerCaseTwo():
         mode([0,1,2,3,4])
     assert ("Error: More than 1 Mode" == str(valErr.value))
 
+# Dealing with Illegal Input
+def test_mode_IllegalCaseOne ():
+    with pytest.raises(TypeError) as datamsg:
+        mode(["Purple", "Reign"])
+    assert ("Invalid List Provided" == str(datamsg.value))
+
+# Dealing with Empty List
+def test_mode_illegalCaseTwo ():
+    with pytest.raises(ValueError) as errmsg:
+        mode([])
+    assert("No Data Provided" == str(errmsg.value))
+
+
+
+
+
+
     
 
 
