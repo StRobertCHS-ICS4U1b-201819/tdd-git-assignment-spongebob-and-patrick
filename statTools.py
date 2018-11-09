@@ -118,17 +118,21 @@ def mode (modeList):
             frequency = 1
             doubleOccurances = [0]
             lrgFreq = 0
-            mode = 0.0
             length = (len(modeList) - 1)
             modeList.sort()
 
             # Ask Mr.Fabroa, How to get it as Type Error
-            modeList[0] / 1
 
 
             # Guarantee Case. Only case where you need check last item.
             if len(modeList) == 2 and modeList[0] != modeList[1]:
                 raise ValueError("Error: More than 1 Mode")
+
+            if modeList[0] == str:
+                theMode = ""
+
+            else:
+                theMode = 0
 
             for i in range(length):
 
@@ -144,7 +148,7 @@ def mode (modeList):
                         doubleOccurances = [0]
                         lrgFreq = frequency
                         doubleOccurances[0] = lrgFreq
-                        mode = modeList[i]
+                        theMode = modeList[i]
                         frequency = 1
 
                     # If same as greatest frequency, more than 1 mode
@@ -158,22 +162,22 @@ def mode (modeList):
                         doubleOccurances = [0]
                         lrgFreq = frequency
                         doubleOccurances[0] = lrgFreq
-                        mode = modeList[i]
+                        theMode = modeList[i]
 
                     elif frequency == lrgFreq:
                         doubleOccurances.append(lrgFreq)
 
             # Only value is mode
             if len(modeList) == 1:
-                mode = modeList[0]
-                return float(mode)
+                theMode = modeList[0]
+                return theMode
 
             # More than 1 mode
             if len(doubleOccurances) > 1:
                 raise ValueError("Error: More than 1 Mode")
 
             else:
-                return float(mode)
+                return theMode
 
         # Invalid Data Type
         except TypeError:
