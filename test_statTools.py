@@ -81,8 +81,18 @@ def test_mode_BasicTestTwo ():
 # Exhaustive Testing with Decimal and Whole Numbers
 def test_mode_ExhaustiveTesting ():
     assert (mode([-2,1.0,3.0,-2.0, 3.0, 5.4, -1, -2]) == -2.0)
+
+# Unusual Testing. More than 1 Mode
+def test_mode_UnusualCaseOne ():
+    with pytest.raises(ValueError) as valErr:
+        mode([-2, -1, 3.4, -1, -2, 5, -1, -2, 5])
+    assert ("Error: More than 1 Mode" == str(valErr.value))
+
+# Unusual Testing. More than 1 Mode
+def test_mode_UnusualCaseTwo ():
+    with pytest.raises(ValueError) as valErr:
+        mode([0,1,2,3,4])
+    assert ("Error: More than 1 Mode" == str(valErr.value))
     
-
-
 
 
