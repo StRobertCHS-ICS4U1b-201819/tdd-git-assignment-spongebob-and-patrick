@@ -211,10 +211,10 @@ def test_rangeFunction_CornerCase ():
     assert(rangeFunction([3]) == 0.0)
 
 
+#test for no input
+def test_medianfunction_nothing():
+    assert(medianFunction([]) == 0)
 
-
-
-
-    
-
+def test_medianFunction_smallList():
+    assert(medianFunction([1,2,3]) == 2 )
 

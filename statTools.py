@@ -216,9 +216,20 @@ def rangeFunction(rangeList):
     except TypeError:
         raise TypeError("Invalid List Provided")
 
-
-
-
 #-------------------------------------------------------------------------------
-# Name:
+# Name:	median
+# Purpose: return median of a list
+# Returning the median of values in a list
+#
+# Author:	Neagoe.A
+#
+# Created:	07/11/2018
 #-------------------------------------------------------------------------------
+
+
+def medianFunction(medianList):
+
+    if len(medianList) == 0:
+        return 0
+    elif len(medianList) >= 1:
+        return
