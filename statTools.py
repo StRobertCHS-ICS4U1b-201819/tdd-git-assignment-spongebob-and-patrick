@@ -223,13 +223,36 @@ def rangeFunction(rangeList):
 #
 # Author:	Neagoe.A
 #
-# Created:	07/11/2018
+# Created:	11/11/2018
 #-------------------------------------------------------------------------------
 
 
 def medianFunction(medianList):
-
-    if len(medianList) == 0:
+    mid = int(len(medianList))/2
+    if len(medianList) < 1:
         return 0
-    elif len(medianList) >= 1:
-        return
+    else:
+     try:
+        if len(medianList)%2 == 1:
+            return medianList[mid+1]
+        else:
+            return (medianList[mid] + medianList[mid+1])/2
+     except:
+        raise TypeError("Invalid Data")
+    return
+
+#-------------------------------------------------------------------------------
+# Name:	lower quartile
+# Purpose: return lower quartile of a list
+# Returning the lower quartile
+#
+# Author:	Neagoe.A
+#
+# Created:	11/11/2018
+#------------------------------------------------------------------------------
+
+def lowerQuartile(list):
+
+
+
+lowerQuartile()
