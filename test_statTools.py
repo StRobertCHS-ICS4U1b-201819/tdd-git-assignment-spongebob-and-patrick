@@ -152,9 +152,9 @@ def test_mode_CornerCaseTwo():
 
 
 def test_mode_IllegalCaseOne ():
-    with pytest.raises(ValueError) as valErr:
+    with pytest.raises(TypeError) as typeError:
         mode(["Purple", "Reign"])
-    assert ("Error: More than 1 Mode" == str(valErr.value))
+    assert ("Invalid List Provided" == str(typeError.value))
 
 
 # Dealing with Empty List
@@ -165,17 +165,14 @@ def test_mode_illegalCaseTwo ():
         mode([])
     assert("No Data Provided" == str(errmsg.value))
 
-# Implementing String Lists with Modes
 
-
-def test_mode_CornerCaseTwo ():
-    assert(mode(["Purple", "Purple", "Reign", "Purple", "Reign"]) == "Purple")
-
-# Implementing Lists with Ints and Strings
+# Unusual Test Case: More Illegal Cases
 
 
 def test_mode_CornerCaseThree ():
-    assert(mode(["Purple", 0, "Reign", 0, 0]) == 0)
+    with pytest.raises(TypeError) as typeError:
+        mode([0, 0, "float"])
+    assert ("Invalid List Provided" == str(typeError.value))
 
 # Just Pass Procedure
 
@@ -189,9 +186,11 @@ def test_rangeFunction_basicTestOne ():
 def test_rangeFunction_basicTestTwo ():
     assert(rangeFunction([2, 6, 1, -2.0, -5, -8.0, 3]) == 14.0)
 
+
 # Exhaustive Testing
 def test_rangeFunction_Exhaustive ():
     assert(rangeFunction([-3.4, 5.4, 1, 0, 9.54, -23.4, 83, 97.4, 4.3,7]) == 120.8)
+
 
 # Unusual Case: Empty String
 def test_rangeFunction_UnusualCaseOne ():

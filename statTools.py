@@ -33,7 +33,7 @@ def average(meanList):
 
             # Find average
             avg = sum / len(meanList)
-            avg = round(avg,2)
+            avg = round(avg, 2)
 
             return avg
 
@@ -90,6 +90,33 @@ def standardDeviation(stdDevList):
             raise TypeError("Invalid List Provided")
 
 
+
+#-------------------------------------------------------------------------------
+# Name:	verifyList
+# Purpose:
+# Make sure that the list has the correct data type
+#
+# Author:	Nimal.S
+#
+# Created:	09/11/2018
+#-------------------------------------------------------------------------------
+
+def verifyList (theList):
+    """ The function make sure that the list has the correct data type
+
+    :param theList: (list) Gets the values of data in the list
+    :return: (bool) Returns true or false
+
+    """
+
+    # If incorrect data type, return false
+    for i in range(len(theList)):
+        if not (isinstance(theList[i], float)) and not (isinstance(theList[i], int)):
+            return False
+
+    return True
+
+
 #-------------------------------------------------------------------------------
 # Name:	mode
 # Purpose:
@@ -97,10 +124,11 @@ def standardDeviation(stdDevList):
 #
 # Author:	Nimal.S
 #
-# Created:	08/11/2018
+# Created:	09/11/2018
 #-------------------------------------------------------------------------------
 
-def mode (modeList):
+
+def mode(modeList):
     """ The function finds the mode of a set of values
 
     :param modeList: (list) Gets the values of data in the list
@@ -108,82 +136,74 @@ def mode (modeList):
 
     """
 
+    #Declare Variables
+    frequency = 1
+    doubleOccurances = [0]
+    lrgFreq = 0
+    length = (len(modeList) - 1)
+    modeList.sort()
+    theMode = 0.0
+
+    # Check if list has correct data type
+    if verifyList(modeList) == False:
+        raise TypeError("Invalid List Provided")
+
     # Handling Empty List
-    if len(modeList) < 1:
+    elif len(modeList) < 1:
         raise ValueError("No Data Provided")
 
+    # Only value is mode
+    elif len(modeList) == 1:
+        theMode = float(modeList[0])
+        return float(theMode)
+
+    # Exception Case: Only time need to check last value when not equa;
+    elif len(modeList) == 2 and modeList[0] != modeList[1]:
+            raise ValueError("Error: More than 1 Mode")
     else:
-        try:
-            #Declare Variables
-            frequency = 1
-            doubleOccurances = [0]
-            lrgFreq = 0
-            length = (len(modeList) - 1)
-            modeList.sort()
-
-            # Guarantee Case. Only case where you need check last item.
-            if len(modeList) == 2 and modeList[0] != modeList[1]:
-                raise ValueError("Error: More than 1 Mode")
-
-            if modeList[0] == str:
-                theMode = ""
+        for i in range(length):
+            if modeList[i] == modeList[i + 1]:
+                frequency += 1
 
             else:
-                theMode = 0
+                # If greater than largest frequency, it becomes mode
+                if frequency > lrgFreq:
 
-            for i in range(length):
+                    # Resets list so only largest frequency
+                    doubleOccurances = [0]
+                    lrgFreq = frequency
+                    doubleOccurances[0] = lrgFreq
+                    theMode = modeList[i]
+                    frequency = 1
 
-                # Check amount of times number occurs (sorted list)
-                if modeList[i] == modeList[i + 1]:
-                    frequency += 1
+                # If same as greatest frequency, counts more than 1 frequency
+                elif frequency == lrgFreq:
+                    doubleOccurances.append(lrgFreq)
+                    frequency = 1
 
-                else:
-                    # If greater than largest frequency, it becomes mode
-                    if frequency > lrgFreq:
+            # Exception case: Only check last case if last two are equal
 
-                        # Resets list so only largest frequency
-                        doubleOccurances = [0]
-                        lrgFreq = frequency
-                        doubleOccurances[0] = lrgFreq
-                        theMode = modeList[i]
-                        frequency = 1
+            if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
+                if frequency > lrgFreq:
+                    doubleOccurances = [0]
+                    lrgFreq = frequency
+                    doubleOccurances[0] = lrgFreq
+                    theMode = modeList[i]
 
-                    # If same as greatest frequency, more than 1 mode
-                    elif frequency == lrgFreq:
-                        doubleOccurances.append(lrgFreq)
-                        frequency = 1
+                elif frequency == lrgFreq:
+                    doubleOccurances.append(lrgFreq)
 
-                # Exception case without going out of bonds
-                if (modeList[i] == modeList[i + 1]) and ((i + 1) == length):
-                    if frequency > lrgFreq:
-                        doubleOccurances = [0]
-                        lrgFreq = frequency
-                        doubleOccurances[0] = lrgFreq
-                        theMode = modeList[i]
+        # More than 1 mode
+        if len(doubleOccurances) > 1:
+            raise ValueError("Error: More than 1 Mode")
 
-                    elif frequency == lrgFreq:
-                        doubleOccurances.append(lrgFreq)
-
-            # Only value is mode
-            if len(modeList) == 1:
-                theMode = modeList[0]
-                return theMode
-
-            # More than 1 mode
-            if len(doubleOccurances) > 1:
-                raise ValueError("Error: More than 1 Mode")
-
-            else:
-                return theMode
-
-        # Invalid Data Type
-        except TypeError:
-            raise TypeError("Invalid List Provided")
+        else:
+            return float(theMode)
 
 #-------------------------------------------------------------------------------
-# Name:	mode
+# Name:	range
 # Purpose:
-# Returning The Mode of a List
+# Returning The Range of a List
 #
 # Author:	Nimal.S
 #
@@ -253,6 +273,4 @@ def medianFunction(medianList):
 
 def lowerQuartile(list):
 
-
-
-lowerQuartile()
+  
