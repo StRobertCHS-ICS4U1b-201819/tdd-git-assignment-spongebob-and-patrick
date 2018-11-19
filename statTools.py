@@ -236,4 +236,41 @@ def rangeFunction(rangeList):
     except TypeError:
         raise TypeError("Invalid List Provided")
 
+#-------------------------------------------------------------------------------
+# Name:	median
+# Purpose: return median of a list
+# Returning the median of values in a list
+#
+# Author:	Neagoe.A
+#
+# Created:	11/11/2018
+#-------------------------------------------------------------------------------
 
+
+def medianFunction(medianList):
+    mid = int(len(medianList))/2
+    if len(medianList) < 1:
+        return 0
+    else:
+     try:
+        if len(medianList)%2 == 1:
+            return medianList[mid+1]
+        else:
+            return (medianList[mid] + medianList[mid+1])/2
+     except:
+        raise TypeError("Invalid Data")
+    return
+
+#-------------------------------------------------------------------------------
+# Name:	lower quartile
+# Purpose: return lower quartile of a list
+# Returning the lower quartile
+#
+# Author:	Neagoe.A
+#
+# Created:	11/11/2018
+#------------------------------------------------------------------------------
+
+def lowerQuartile(list):
+
+  

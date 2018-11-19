@@ -210,10 +210,25 @@ def test_rangeFunction_CornerCase ():
     assert(rangeFunction([3]) == 0.0)
 
 
+#test for no input
+def test_medianfunction_nothing():
+    assert(medianFunction([]) == 0)
+
+#test for list of odd length
+def test_medianFunction_oddList():
+    assert(medianFunction([1,2,3]) == 2 )
+
+#test for list of even length
+def test_medianFunction_evenList():
+    assert(medianFunction([2,4]) == 3)
+
+#test for invalid data type
+
+def test_medianFunction_strings():
+    with pytest.raises(TypeError) as errmsg:
+        medianFunction("string")
+    assert ("Invalid Data type" == str(errmsg.value))
 
 
-
-
-    
-
-
+#test for
+def test_lowerQuartile()
